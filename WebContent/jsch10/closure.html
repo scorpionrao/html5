@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="US-ASCII">
+<title>Insert title here</title>
+<script>
+	/* function handler() {
+		alert("Yeah, that page loaded!");
+	}
+	window.onload = handler;  */
+	
+/* 	window.onload = function() {
+		alert("Yeah, that page loaded!");
+	};
+	
+	setTimeout(function() {
+		alert("Time to take the cookies out of the oven");
+	}, 600000); */
+	
+/* 	var migration = true;
+	
+	var fly = function(num) {
+		var sound = "Flying!";
+		function wingFlapper() {
+			console.log(sound);
+		}
+		for (var i = 0; i < num; i++) {
+			wingFlapper();
+		}
+	};
+	
+	function quack(num) {
+		var sound = "Quack";
+		var quacker = function() {
+			console.log(sound);
+		};
+		for (var i = 0; i < num; i++) {
+			quacker();
+		}
+	}
+	
+	if (migration) {
+		quack(4);
+		fly(4);
+	} */
+	
+/* 	var justAVar = "Oh, don't you worry about it, I'm GLOBAL";
+	function whereAreYou() {
+		var justAVar = "Just an every day LOCAL";
+		function inner() {
+			return justAVar;
+		}
+		return inner;
+	}
+	var innerFunction = whereAreYou();
+	var result = innerFunction();
+	console.log(result); */
+	
+/* 	var count = 0;
+	function counter() {
+		count = count + 1;
+		return count;
+	} 
+	console.log(counter());
+	console.log(counter());
+	console.log(counter());
+	*/
+	
+/* 	function makeCounter() {
+		var count = 0;
+		function counter() {
+			count = count + 1;
+			return count;
+		}
+		return counter;
+	}
+	var doCount = makeCounter();
+	console.log(doCount());
+	console.log(doCount());
+	console.log(doCount()); */
+	
+	/* function makeCounter() {
+		var count = 0;
+		return {
+			increment: function() {
+				count = count + 1;
+				return count;
+			}
+		};
+	}
+	var counter = makeCounter();
+	console.log(counter.increment());
+	console.log(counter.increment());
+	console.log(counter.increment());
+	 */
+	 
+	/* function makePassword(password) {
+		return function guessPassword(passwordGuess) {
+			return (passwordGuess === password);
+		};
+	}
+	var tryGuess = makePassword("secret");
+	console.log("Guessing 'nope': " + tryGuess("nope"));
+	console.log("Guessing 'secret': " + tryGuess("secret"));
+	 */ 
+	 
+	/* function multN(n) {
+		return function multBy(m) {
+			return (n*m);
+		};
+	}
+	var multBy3 = multN(3);
+	console.log("Multiplying 2: " + multBy3(2));
+	console.log("Multiplying 3: " + multBy3(3));
+	 */
+	 
+	 /* function setTimer(doneMessage, n) {
+		 setTimeout(function() {
+			 alert(doneMessage);
+		 }, n);
+		 doneMessage = "OUCH!";
+	 }
+	 setTimer("Cookies are done!", 1000); */
+	 
+	 // without closure
+	 /* var count = 0;
+	 window.onload = function() {
+		 var button = document.getElementById("clickme");
+		 button.onclick = handleClick;
+	 };
+	 
+	 function handleClick() {
+		 var message = "You clicked me ";
+		 var div = document.getElementById("message");
+		 count++;
+		 div.innerHTML = message + count + " times!";
+	 } */
+	 
+	 // with closure
+	 window.onload = function() {
+		 var count = 0;
+		 var message = "You clicked me ";
+		 var div = document.getElementById("message");
+		 
+		 var button = document.getElementById("clickme");
+		 button.onclick = function() {
+			 count++;
+			 div.innerHTML = message + count + " times!";
+		 };
+	 };
+</script>
+<style>
+	body, button {margin: 10px;}
+	div {padding: 10px;}
+</style>
+</head>
+<body>
+	<button id="clickme">Click me!</button>
+	<div id="message"></div>
+</body>
+</html>

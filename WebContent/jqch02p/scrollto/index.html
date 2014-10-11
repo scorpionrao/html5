@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll To Experiment</title>
+<style>
+	.thumbnail {
+		border: solid red;
+	}
+	.slideindex {
+		border: solid green;
+		vertical-align: middle;
+	}
+</style>
+</head>
+<body>
+<div>
+		<a href="javascript:gotoslide3();">Go to Slide 3</a>
+</div>
+<div id="allthumbnails" style="overflow-y: scroll; height:200px; border: solid black;">
+	<div id="slide1">
+		<img class="thumbnail" src="images/jump1.jpg"/>
+		<span class="slideindex">Slide 1</span>
+	</div>
+	<div id="slide2">
+		<img class="thumbnail" src="images/jump2.jpg"/>
+		<span class="slideindex">Slide 2</span>
+	</div>
+	<div id="slide3">
+		<img class="thumbnail" src="images/jump3.jpg"/>
+		<span class="slideindex">Slide 3</span>
+	</div>
+	<div id="slide4">
+		<img class="thumbnail" src="images/jump4.jpg"/>
+		<span class="slideindex">Slide 4</span>
+	</div>
+</div>
+<script src="../../scripts/jquery-1.5.2.min.js"></script>
+<script>
+	function gotoslide3() {
+		$('#allthumbnails').style.display = 'hidden';
+		$('#allthumbnails').animate({
+			scrollTop: $('#slide3').offset().top
+		});
+	}
+	function showpopup() {
+		popup = window.open('','myconsole','width=550,height=250');
+		popup.focus();
+	}
+</script>
+</body>
+</html>

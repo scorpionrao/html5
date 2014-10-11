@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+	<script>
+		var passengers = [	{ name: "Jane Doloop", paid: true, ticket: "coach"},
+		                  	{ name: "Dr. Eveleee", paid: true, ticket: "firstclass"},
+		                  	{ name: "Sue Propert", paid: true, ticket: "firstclass"},
+		                  	{ name: "John Funcal", paid: true, ticket: "coach"}
+		                  ];
+		function servePassengers(passengers) {
+			for (var i = 0; i < passengers.length; i++) {
+				serveCustomer(passengers[i]);
+			}
+		}
+		function processPassengers(passengers, testFunction) {
+			for (var i = 0; i < passengers.length; i++) {
+				if (testFunction(passengers[i])) {
+					return false;
+				}
+			}
+			return true;
+		}
+		function checkNoFlyList(passenger) {
+			return (passenger.name === "Dr. Evel");
+		}
+		function checkNotPaid(passenger) {
+			return (!passenger.paid);
+		}
+		function serveCustomer(passenger) {
+			var getDrinkOrderFunction = createDrinkOrder(passenger);
+			getDrinkOrderFunction();
+		}
+		function createDrinkOrder(passenger) {
+			var orderFunction;
+			if (passenger.ticket === "firstclass") {
+				orderFunction = function() {
+					alert("Would you like a cocktail or wine?");
+				};
+			} else {
+				orderFunction = function() {
+					alert("Your choice is cola or water.");
+				};
+			}
+			return orderFunction;
+		}
+		var allCanFly = processPassengers(passengers, checkNoFlyList);
+		if (!allCanFly) {
+			console.log("Plane can't take off: passenger on no-fly-list");
+		}
+		
+		var allPaid = processPassengers(passengers, checkNotPaid);
+		if (!allPaid) {
+			console.log("Plane can't take off: passenger not paid.");
+		}
+		servePassengers(passengers);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

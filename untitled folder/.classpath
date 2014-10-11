@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Selenium"/>
+	<classpathentry kind="lib" path="/Users/rgonugunta/Documents/workspace/jars/jexcelapi/jxl.jar" sourcepath="/Users/rgonugunta/Documents/workspace/jars/jexcelapi/src/jxl"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

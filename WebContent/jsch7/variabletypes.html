@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang = "en">
+<head>
+<meta charset="utf-8">
+<title>Print Types</title>
+</head>
+<body>
+	<script>
+		print("abcdef");
+		print(123);
+		print(true);
+		print({});
+		print([]);
+		var t;
+		print(t);
+		print({"abcdef": 123});
+		print(["abcdef", 123]);
+		print(print);
+		function print(varName) {
+			console.log(varName + " is a " + typeof varName);
+		}
+	</script>
+</body>
+</html>
